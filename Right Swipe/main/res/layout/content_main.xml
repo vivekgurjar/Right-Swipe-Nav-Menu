@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:id="@+id/mainContainer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/barLayout"
+            android:orientation="horizontal"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your App"
+                android:textSize="18sp"
+                style="@style/TextAppearance.FontPath"
+                android:textColor="@color/primaryTextColor"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:id="@+id/headText"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/headText"
+                android:layout_toStartOf="@id/navIcon"
+                android:layout_centerVertical="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search "
+                    android:drawableStart="@drawable/ic_search"
+                    android:textColor="#ffffff"
+                    android:drawablePadding="5dp"
+                    android:textColorHint="#93ffffff"
+                    android:id="@+id/searchText"
+                    android:inputType="text"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close"
+                    android:layout_gravity="end|center_vertical"
+                    android:id="@+id/clearText"
+                    android:visibility="invisible"/>
+
+            </FrameLayout>
+
+
+            <ImageView
+                android:id="@+id/navIcon"
+                android:paddingEnd="20dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/menu_to_back"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+
+        <include layout="@layout/ui_container"/>
+
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_gift"
+        android:id="@+id/fab"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
